@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Evening Walk</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene>
+            <a-camera position='0 0 0'></a-camera>
+            <!--assets-->
+            <a-assets timeout="1000">
+                <img id="box_texture" src="download.jpeg">
+                <a-asset-item id="super_human" src="low_poly_person/scene.gltf"></a-asset-item>
+                <a-asset-item id="lamp" src="./street_lamp/scene.gltf"></a-asset-item>
+                <a-asset-item id="bench" src="./hollow_knight/scene.gltf"></a-asset-item>
+                <a-asset-item id="cat" src="./cat/scene.gltf"></a-asset-item>
+            </a-assets>
+            
+            <!--entity-->
+            <a-entity>
+            <a-box position="0 -5 1" scale="15 1 100"></a-box>
+            </a-entity>
+
+            <a-entity 
+                gltf-model="#super_human"
+                position="0 0 0" 
+                shadow="cast:true"
+                scale="0.02 0.02 0.02"
+            ></a-entity>
+
+            <a-entity 
+                gltf-model="#lamp"
+                position="0 0 0" 
+                scale="0.2 0.2 0.2"
+                shadow="cast:true"
+            ></a-entity>
+
+            <a-entity 
+                gltf-model="#bench"
+                position="0 0 0" 
+                shadow="cast:true"
+                scale="2 2 2"
+            ></a-entity>
+            <a-entity 
+                gltf-model="#cat"
+                position="0 0 0"
+                shadow="cast:true"
+                scale="2 2 2"
+            ></a-entity>
+
+            <!--light-->
+            <a-entity light="type:point;castShadow:true;color:yellow;intensity:0.5" position="-5 8 1">
+            </a-entity>
+
+            <a-box src="#box_texture" position = "0 0 20" width='15' height='15' rotation="180 0 180"></a-box>
+        </a-scene>
+    </body>
+</html>
